@@ -1,0 +1,28 @@
+.header-logo {
+    margin-top: 15px;
+}
+
+.box-menu {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+
+.menu-list {
+    margin-top: 30px;
+    display: inline-block;
+    list-style: none;
+}
+
+.menu-list li {
+    display: inline-block;
+    list-style: none;
+    height: 50px;
+    padding: 10px 15px;
+}
+
+.menu-list li a {
+    color: #1C1C1C;
+    font-weight: bold;
+    text-decoration: none;
+}

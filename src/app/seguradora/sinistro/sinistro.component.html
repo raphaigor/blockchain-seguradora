@@ -1,0 +1,85 @@
+<app-layout></app-layout>
+
+
+<section class="banner-img">
+  <div class="container box-container" *ngIf="!dataRetorno.car">
+    <div class="row">
+      <div class="col-md-12" style="text-align: center;">
+        <h2 class="center-block">INFORME DE SINISTRO</h2>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Renavam</label>
+          <input type="text" class="form-control" placeholder="Informe o RENAVAM" [(ngModel)]="veiculo.id">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Sinistro</label>
+          <select class="form-control" [(ngModel)]="veiculo.sinistro">
+            <option value="COLISÃO">COLISÃO</option>
+            <option value="ROUBO">ROUBO</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Descrição</label>
+          <textarea type="text" class="form-control" placeholder="Descreva a ocorrência" [(ngModel)]="veiculo.descricao">
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="text-align: center;">
+        <button type="submit" class="btn" (click)="addSinistro()">ENVIAR SINISTRO</button>
+      </div>
+    </div>
+  </div>
+  <div class="container box-container" *ngIf="dataRetorno.car">
+    <div class="row">
+      <div class="col-md-12" style="text-align: center;">
+        <h2 class="center-block">RETORNO DO SINISTRO</h2>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-md-4">
+        <label for="exampleInputEmail1">Renavam</label>
+        <div class="input-fake">{{ dataRetorno.car._id }}</div>
+      </div>
+      <div class="col-md-4">
+        <label for="exampleInputEmail1">MARCA</label>
+        <div class="input-fake">{{ dataRetorno.car._make }}</div>
+      </div>
+      <div class="col-md-4">
+        <label for="exampleInputEmail1">MODELO</label>
+        <div class="input-fake">{{ dataRetorno.car._model }}</div>
+      </div>
+      <div class="col-md-6">
+        <label for="exampleInputEmail1">PROPRIETÁRIO</label>
+        <div class="input-fake">{{ dataRetorno.car._owner }}</div>
+      </div>
+      <div class="col-md-6">
+        <label for="exampleInputEmail1">COR</label>
+        <div class="input-fake">{{ dataRetorno.car._colour }}</div>
+      </div>
+      <div class="col-md-6">
+        <label for="exampleInputEmail1">PAGOU FINANCIAMENTO?</label>
+        <div class="input-fake">{{ (dataRetorno.financiamento) ? 'SIM' : 'NÃO' }}</div>
+      </div>
+      <div class="col-md-6">
+        <label for="exampleInputEmail1">PAGOU MULTA?</label>
+        <div class="input-fake">{{ (dataRetorno.multa) ? 'SIM' : 'NÃO' }}</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="text-align: center;">
+        <button type="submit" class="btn" (click)="newSinistro()">NOVO SINISTRO</button>
+      </div>
+    </div>
+  </div>
+</section>

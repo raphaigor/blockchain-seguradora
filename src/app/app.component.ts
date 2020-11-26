@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'my-app-seguradora';
+
+  alertOptions: any = {
+		timeOut: 5000,
+		preventLastDuplicates: true,
+		maxStack: 3,
+		showProgressBar: true
+	}
+
+  strRenaval = ''
+  veiculo = {}
+  sendVeiculo = false
+
+  constructor() { }
+
 }

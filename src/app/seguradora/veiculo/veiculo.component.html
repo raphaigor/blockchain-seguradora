@@ -1,0 +1,54 @@
+<app-layout></app-layout>
+
+<section class="banner-img">
+    <div class="container box-container">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <h2 class="center-block">VEÍCULOS</h2>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-12">
+                <table class="grid">
+                    <thead>
+                        <tr>
+                            <th>RENAVAM</th>
+                            <th>MARCA</th>
+                            <th>MODELO</th>
+                            <th>PROPRIETÁRIO</th>
+                            <th>COR</th>
+                            <th>ALIENADO</th>
+                            <th>SINISTROS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let veic of allVeiculos; let j = index">
+                            <td>{{ veic._id }}</td>
+                            <td>{{ veic._make }}</td>
+                            <td>{{ veic._model }}</td>
+                            <td>{{ veic._owner }}</td>
+                            <td>{{ veic._colour }}</td>
+                            <td>{{ (veic._alienado) ? 'SIM' : 'NÃO' }}</td>
+                            <td>{{ veic._sinistros.length }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- "_alienado": true,
+"_colour": "blue",
+"_id": "1",
+"_make": "Toyota",
+"_model": "Prius",
+"_owner": "Tomoko",
+"_sinistros": [
+    {
+        "descricao": "testando",
+        "id": "1",
+        "sinistro": "dsfdfgdgd",
+        "type": "io.worldsibu.sinistro"
+    }
+], -->
